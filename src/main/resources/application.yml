@@ -1,0 +1,40 @@
+# DB 연결
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: whj13579
+    url: jdbc:mysql://localhost:3306/ex_board
+    hikari:
+      connection-test-query: SELECT NOW () FROM dual
+#     connection-test-query : 커넥션이 정상적으로 맺어졌는지 확인하기 위한 SQL 쿼리
+#     어플리케이션이 실행되면 다음의 쿼리가 콘솔에 출력됨.
+
+# 정적 파일 변경 실시간 반영
+  devtools:
+    restart:
+      enabled: 'false'
+    livereload:
+      enabled: 'true'
+
+# 타임리프 캐싱 OFF
+  thymeleaf:
+    cache: 'false'
+
+# JPA 설정
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: 'false'
+    show-sql: 'true'
+    open-in-view: 'false'
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: 'true'
+        use_sql_comments: 'true'
+        default_batch_fetch_sie: '100'
+
+server:
+  port: 8087
