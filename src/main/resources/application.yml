@@ -36,5 +36,8 @@ spring:
         use_sql_comments: 'true'
         default_batch_fetch_sie: '100'
 
+log4jdbc.spylogdelegator.name = net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegtor
+log4jdbc.dump.sql.maxlinelength = 0
+
 server:
   port: 8087
